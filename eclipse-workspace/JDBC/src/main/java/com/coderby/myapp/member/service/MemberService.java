@@ -65,12 +65,9 @@ public class MemberService implements IMemberService {
 	}
 
 	@Override
-	public int idCheck(MemberVO mem) {
-		int result = memberRepository.idCheck(mem);
-		return result;
+	public boolean checkId(String userId) {
+		return memberRepository.checkId(userId);
 	}
-
-
 	
 	
 //	@Override

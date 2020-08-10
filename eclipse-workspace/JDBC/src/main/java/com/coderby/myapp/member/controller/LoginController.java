@@ -18,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.coderby.myapp.member.model.MemberVO;
@@ -40,7 +41,7 @@ public class LoginController {
 		return "redirect:/login";
 	}
 	
-	@RequestMapping("/loginCheck")
+	@RequestMapping(value="/loginCheck", method = RequestMethod.POST)
 	public String loginCheck(Model model, HttpSession session) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		session.removeAttribute("message");

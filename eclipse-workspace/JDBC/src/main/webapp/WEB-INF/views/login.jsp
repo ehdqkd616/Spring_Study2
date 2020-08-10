@@ -12,6 +12,7 @@
 <sec:authorize access="isAnonymous()">
 ${message}
 <form action="loginCheck" method="post">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 아이디 : <input type=text name=id><br>
 비밀번호 : <input type=password name=pw><br>
 <input type=submit value=로그인>

@@ -17,7 +17,7 @@ public interface IMemberRepository {
 	void deleteMember(String userId);
 	void deleteAuth(String userId);
 	Integer getMemberCount(String word);
-	int idCheck(MemberVO mem);
+	boolean checkId(String userId);
 
 //	List<MemberAuthVO> getAuthList();
 //	void updateAuth(String role, String userId);

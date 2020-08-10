@@ -15,7 +15,8 @@ public interface IMemberService {
 	void updateMemberAuth(String auth, String userId);
 	void deleteMember(String userId);
 	Integer getMemberCount(String word);
-	int idCheck(MemberVO mem);
+	boolean checkId(String userId);
+
 	
 //	List<MemberVO> getMemList();
 //	void updateAuth(String role, String userId);

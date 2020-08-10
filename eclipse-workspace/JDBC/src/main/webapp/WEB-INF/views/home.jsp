@@ -31,6 +31,7 @@
 <sec:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
 <sec:authentication property='principal.userId'/>님 안녕하세요.<br>
 <a href="file">파일 업/다운</a><br>
+<a href="hr/index">인사 관리</a><br>
 <a href="member/list">회원 목록 관리</a><br>
 <form action=logout method=post>
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -40,6 +41,7 @@
 <sec:authorize access="isAuthenticated() and hasRole('ROLE_MASTER')">
 Master님 안녕하세요.<br>
 <a href="file">파일 업/다운</a><br>
+<a href="hr/index">인사 관리</a><br>
 <a href="member/list">회원 목록 관리</a><br>
 <form action=logout method=post>
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

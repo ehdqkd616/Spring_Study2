@@ -121,11 +121,10 @@ public class MemberController {
 		return "redirect:/member/"+userId;
 	}
 	
+	@RequestMapping("/insert/idCheck")
 	@ResponseBody
-	@PostMapping("/idCheck")
-	public int idCheck(MemberVO mem) throws Exception {
-		int result = memberService.idCheck(mem);
-		return result;
+	public boolean idCheck(String userId) {
+		return memberService.checkId(userId);
 	}
 	
 	

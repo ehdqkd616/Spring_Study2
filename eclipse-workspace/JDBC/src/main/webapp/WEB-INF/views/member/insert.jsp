@@ -5,6 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Member ${message eq 'insert' ? 'insert' : 'update'}</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<style>
+	#loadingbar{
+		position : absolut;
+		left : 50%;
+		top : 50%;
+		background : #ffffff;
+	}
+</style>
 </head>
 <body>
 <h2>회원 정보 ${message eq 'insert' ? '입력' : '수정'}</h2>
@@ -13,8 +22,8 @@
 <table>
 <tr>
 <td>아이디</td>
-<td><input type=text name=userId value="${mem.userId}" ${!empty mem ? 'readonly' : ''}></td>
-<td><button type="submit"></button></td>
+<td><input type=text id="userId" name=userId value="${mem.userId}" ${!empty mem ? 'readonly' : ''}></td>
+<td><button type="submit" id="idCheck">중복검사</button></td>
 </tr>
 <tr>
 <td>이름</td><td><input type=text name=name value="${mem.name}"></td>
@@ -29,7 +38,64 @@
 <td>주소</td><td><input type=text name=address value="${mem.address}"></td>
 </tr>
 </table>
-<input type=submit value="${message eq 'insert' ? '입력' : '수정'}"><input type=reset value=취소>
+<input type=submit value="${message eq 'insert' ? '입력' : '수정'}" onclick="check(); return"><input type=reset value=취소>
 </form>
+<div id="loadingbar"><img src="../resources/images/loading.gif"/></div>
+
+<script>
+	var ck = false;
+	$(function() {
+		$("#loadingbar").hide();
+		$("#idCheck").on("click", function() {
+			if ($("#userId").val()) {
+				$.ajax({
+					async : 'true',
+					url : "insert/idCheck",
+					type : "post",
+					data : {
+						userId : $("#userId").val(),
+						"${_csrf.parameterName}" : "${_csrf.token}"
+					},
+					dataType : "json",
+					success : function(check) {
+						if (check) {
+							alert("중복되지 않는 아이디입니다.");
+							$("#idCheck").remove();
+							$("#userId").attr("readonly", true);
+							ck = !ck;
+						} else {
+							alert("중복됩니다. 아이디를 다시 입력해 주세요.");
+						}
+						return false;
+					},
+					error : function() {
+						alert("시간이 너무 오래 걸립니다. 다시 시도해 주세요.");
+						return false;
+					}
+				});
+			} else{
+				alert("아이디를 입력하세요.");
+			}
+			return false;
+		});
+	})
+	.ajaxStart(function(){
+		$("#loadingbar").show();
+	})
+	.ajaxStop(function(){
+		$("#loadingbar").hide();
+	})
+	function check(){
+		if(!ck){
+			alert("아이디 중복검사를 실행해 주세요.");
+			return false;
+		}else{
+			return true;
+		}
+	}
+		
+</script>
+
 </body>
 </html>
+

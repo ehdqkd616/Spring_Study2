@@ -168,11 +168,10 @@ public class MemberRepository implements IMemberRepository{
 	}
 
 	@Override
-	public int idCheck(MemberVO mem) {
-//		String sql = "select count(*) from member " + 
-//				"where userid = #{userId}";
-//		return jt.query(sql, Integer.class, mem);
-		return 0;
+	public boolean checkId(String userId) {
+		String sql = "select count(*) from member where userid=?";
+		Integer a = jt.queryForNullableObject(sql, Integer.class, userId);
+		return a==0 ? true : false;
 	}
 	
 	
