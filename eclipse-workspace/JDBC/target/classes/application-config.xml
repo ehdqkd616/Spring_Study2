@@ -7,8 +7,10 @@
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
@@ -71,21 +73,20 @@
  -->
   	
  	<!-- SqlSessionFactory 객체 주입 -->
-	<!-- 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="configLocation" value="classpath:/mybatis-config.xml"></property>
-        <property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
+        <property name="mapperLocations" value="classpath:/com/coderby/myapp/**/*.xml"></property>
     </bean>
-    -->
+ 
+	<mybatis-spring:scan base-package="com.coderby.myapp.hr.dao" />
+ 
     <!-- SqlSession 객체 주입 -->
-    <!-- 
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
         destroy-method="clearCache">
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
     </bean>
-	-->
-
+	
+	
 	<!-- 트렌젝션 XML 설정
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 	<tx:attributes>
@@ -98,6 +99,6 @@
 	expression="execution(* com.coderby.myapp..*Service.*teEmp(..))" />
 	<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
 	</aop:config>
--->
+	-->
 	
 </beans>

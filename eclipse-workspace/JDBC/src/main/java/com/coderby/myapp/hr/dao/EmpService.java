@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +16,7 @@ import com.coderby.myapp.hr.model.JobVO;
 public class EmpService implements IEmpService {
 
 	@Autowired
+	@Qualifier("IEmpRepository")
 	IEmpRepository empRepository;
 	
 	@Override
@@ -50,7 +52,7 @@ public class EmpService implements IEmpService {
 	}
 	
 //	@Override
-//	@Transactional("txManager")//Delete 트랜젝션 적용 순서
+//	@Transactional("txManager")//Delete �듃�옖�젥�뀡 �쟻�슜 �닚�꽌
 //	public void deleteEmp (int empId) {
 //	empRepository.deleteJobHistory(empId);
 //	empRepository.deleteMan(empId);	
