@@ -55,86 +55,30 @@ delete from authorities where userid=#{userId}
 String sql = "update authorities set authority=#{authority}? where userid=#{userId}";
 </update>
 
+<select id="getMemberList" resultType="com.coderby.myapp.member.model.MemberVO">
+	select rnum, userid, name, email, address, enabled, authority 
+	from (select rownum rnum, userid, name, email, address, enabled, authority 
+		from (select m.userid, name, email, address, enabled, authority 
+			from member m join authorities a on m.userid=a.userid order by m.userid)) 
+	<if test="word == null">
+		where rnum between ((#{page}-1)*10+1) and ((#{page}-1)*10+1+9)
+	</if>
+	<if test="word != null">
+		where rnum between ((#{page}-1)*10+1) and ((#{page}-1)*10+1+9) and userid like '%'||#{word}||'%' or name like '%'#{word}||'%'
+	</if>
+</select>
 
-<!-- 	
-	@Override
-	public Integer getMemberCount(String word) {
-		String sql = null;
-		if(word==null) {
-			sql = "select count(*) from member";
-			return jt.queryForNullableObject(sql, Integer.class);
-		}else {
-			sql = "select count(*) from member where userid like '%"+word+"%' or name like '%"+word+"%'";
-			return jt.queryForNullableObject(sql, Integer.class);
-		}
-	}
+<select id="getMemberCount" parameterType="string" resultType="int">
+	select count(*) from member
+	<if test="word != null">
+	where userId like '%'||#{word}||'%' or name like '%'#{word}'%'
+	</if>
+</select>
 
-	@Override
-	public boolean checkId(String userId) {
-		String sql = "select count(*) from member where userid=?";
-		Integer a = jt.queryForNullableObject(sql, Integer.class, userId);
-		return a==0 ? true : false;
-	}
-
-
-	@Override
-	public List<MemberVO> getMemberList(int page, String word) {
-		String sql = null;
-		int start = (page-1)*10+1;
-		int end = start+9;
-		if(word==null) {
-			sql = "select rnum, userid, name, email, address, enabled, authority " + 
-					"from" + 
-					"(select rownum rnum, userid, name, email, address, enabled, authority " + 
-					"from" + 
-					"(select m.userid, name, email, address, enabled, authority " + 
-					"from member m " + 
-					"join authorities a " + 
-					"on m.userid=a.userid " + 
-					"order by m.userid)) " + 
-					"where rnum between ? and ?";
-			return jt.query(sql, new RowMapper<MemberVO>() {
-				@Override
-				public MemberVO mapRow(ResultSet rs, int rowNum) throws SQLException {
-					MemberVO mem = new MemberVO();
-					mem.setUserId(rs.getString("userid"));
-					mem.setName(rs.getString("name"));
-					mem.setEmail(rs.getString("email"));
-					mem.setAddress(rs.getString("address"));
-					mem.setEnabled(rs.getInt("enabled"));
-					mem.setAuth(rs.getString("authority"));
-					return mem;
-				}
-			}, start, end);
-		}else {
-			sql = "select rnum, userid, name, email, address, enabled, authority " + 
-					"from" + 
-					"(select rownum rnum, userid, name, email, address, enabled, authority " + 
-					"from" + 
-					"(select m.userid, name, email, address, enabled, authority " + 
-					"from member m " + 
-					"join authorities a " + 
-					"on m.userid=a.userid " + 
-					"order by m.userid)) " + 
-					"where rnum between ? and ? and userid like '%"+word+"%' or name like '%"+word+"%'";
-			return jt.query(sql, new RowMapper<MemberVO>() {
-				@Override
-				public MemberVO mapRow(ResultSet rs, int rowNum) throws SQLException {
-					MemberVO mem = new MemberVO();
-					mem.setUserId(rs.getString("userid"));
-					mem.setName(rs.getString("name"));
-					mem.setEmail(rs.getString("email"));
-					mem.setAddress(rs.getString("address"));
-					mem.setEnabled(rs.getInt("enabled"));
-					mem.setAuth(rs.getString("authority"));
-					return mem;
-				}
-			}, start, end);
-		}
-		
-	}
-	
- -->
+<select id="checkId" parameterType="string" resultType="boolean">
+	select exists (select 1 from member where userid=#{userId})
+	<!-- select count(*) from member where userid=#{userId} -->	
+</select>
 
 </mapper>
 

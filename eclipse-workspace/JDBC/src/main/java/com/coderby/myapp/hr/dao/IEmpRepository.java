@@ -14,20 +14,20 @@ public interface IEmpRepository {
 	int getEmpCount();
 	int getEmpCount(@Param("deptId") int deptId);
 	List<EmpVO> getEmpList();
-	EmpVO getEmpInfo(int empId);
-	EmpDetailVO getEmpDetailInfo(int empId);
+	EmpVO getEmpInfo(@Param("empId")int empId);
+	EmpDetailVO getEmpDetailInfo(@Param("empId")int empId);
 	void updateEmp(EmpVO emp);
 	void insertEmp(EmpVO emp);
 	void deleteEmp(@Param("empId") int empId);
-	void deleteJobHistory(int empId);
-	void updateManagers(int empId);
-	List<EmpVO> getEmpListByName(String name);
+	void deleteJobHistory(@Param("empId")int empId);
+	void updateManagers(@Param("empId")int empId);
+	List<EmpVO> getEmpListByName(@Param("name")String name);
 	List<Map<String,Object>> getAllDeptId();
 //	List<Map<String,Object>> getAllJobId();
 	List<JobVO> getAllJobId();
 	List<Map<String,Object>> getAllManagerId();
 	List<EmpVO> getEmpByMaxSalary();
-	Map<String, Integer> getUpdateCount(int empId);
+	Map<String, Integer> getUpdateCount(@Param("empId")int empId);
 	
 //	public List<DeptVO> deptList();
 //	public List<Map<String, Object>> maxSalary();

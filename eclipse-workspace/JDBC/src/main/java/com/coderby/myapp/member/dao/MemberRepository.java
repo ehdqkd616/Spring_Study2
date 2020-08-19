@@ -22,7 +22,7 @@ public class MemberRepository implements IMemberRepository{
 	public void insertMember(MemberVO mem) {
 		String sql = "insert into member values(?,?,?,?,?,?)";
 		jt.update(sql, mem.getUserId(), mem.getName(), mem.getPassword(), 
-				mem.getEmail(), mem.getAddress(), mem.getEnabled());
+				mem.getEmail(), mem.getAddress(), 1);
 	}
 
 	@Override

@@ -79,11 +79,8 @@
     </bean>
  
 	<mybatis-spring:scan base-package="com.coderby.myapp.hr.dao" />
- 	<!-- <mybatis-spring:scan base-package="com.coderby.myapp.member.dao" /> -->
- 	<mybatis-spring:scan base-package="com.coderby.myapp.member.service" /> 
- 	<!-- <mybatis-spring:scan base-package="com.coderby.myapp.files.dao" /> -->
- 	<!-- <mybatis-spring:scan base-package="com.coderby.myapp.files.service" /> -->
- 	
+ 	<mybatis-spring:scan base-package="com.coderby.myapp.member.dao" />
+	<mybatis-spring:scan base-package="com.coderby.myapp.files.dao" />
  	
     <!-- SqlSession 객체 주입 -->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
