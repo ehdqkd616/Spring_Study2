@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: supreme
-Build-Jdk: 1.8.0_261
-=======
 Built-By: my4my
 Build-Jdk: 1.8.0_231
->>>>>>> 60b22c3903c0890a2c24b5180972e650fe1b1538
 Created-By: Maven Integration for Eclipse
 

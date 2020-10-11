@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.coderby.myapp.member.model.MemberVO;
 import com.coderby.myapp.member.service.IMemberService;
+import com.sun.xml.internal.bind.CycleRecoverable.Context;
 
 @Controller
 public class LoginController {
@@ -54,6 +55,7 @@ public class LoginController {
 			String url = "/";
 			if(session.getAttribute("url")!=null) {
 				url = (String)session.getAttribute("url");
+				System.out.println("로그인 후 url : "+url);
 			}
 			return "redirect:/"+url;
 		}else {

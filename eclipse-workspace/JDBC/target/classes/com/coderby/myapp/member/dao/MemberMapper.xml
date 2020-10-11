@@ -17,7 +17,7 @@ insert into member values({#userId}, {#name}, {#password}, {#email}, {#address},
 </insert> 
 
 <insert id="insertAuth" parameterType="string">
-insert into authorities values({#userId}, "ROLE_USER");
+insert into authorities values({#userId}, 'ROLE_USER')
 </insert> 
 
 <select id="getMember" parameterType="string" resultMap="memberMap">
@@ -76,8 +76,8 @@ String sql = "update authorities set authority=#{authority}? where userid=#{user
 </select>
 
 <select id="checkId" parameterType="string" resultType="boolean">
-	select exists (select 1 from member where userid=#{userId})
-	<!-- select count(*) from member where userid=#{userId} -->	
+	<!-- select exists (select 1 from member where userid=#{userId}) -->
+	select count(*) from member where userid=#{userId}
 </select>
 
 </mapper>

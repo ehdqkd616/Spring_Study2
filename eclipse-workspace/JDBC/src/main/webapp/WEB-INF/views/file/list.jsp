@@ -38,7 +38,7 @@
 				<img src='<c:url value="/img/${file.fileId}"/>' width="100" class="img-thumbnail"><br>
 			</c:when>
 			<c:otherwise>
-				<img src='<c:url value="/resources/images/thumbnail.jpeg"/>' width="100" class="img-thumbanail"><br>
+				<img src='<c:url value="/resources/images/thumbnail.jpeg"/>' width="100" class="img-thumbnail"><br>
 			</c:otherwise>
 			</c:choose>
 			</td>
