@@ -22,13 +22,12 @@
 					<tr>
 						<td>${room.roomId}</td>
 						<td>${room.roomName}</td>
-						<td><a href="/myapp/multichat/room/${room.roomId}"><button
-									id="b${room.roomId}">입장</button></a></td>
+						<td><a href="/emp/multichat/room/${room.roomId}"><button id="b${room.roomId}">입장</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		<a href="/myapp/multichat/new"><button id=new>채팅방 개설</button></a>
+		<a href="/emp/multichat/new"><button id=new>채팅방 개설</button></a>
 	</div>
 </body>
 </html>

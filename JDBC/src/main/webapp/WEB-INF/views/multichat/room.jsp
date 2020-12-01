@@ -22,19 +22,76 @@
 	<button id=exit>나가기</button>
 	
 	<script>
-		var ws;
-		var nickname;
-		/* <![CDATA[*/
-		var roomId = ${room.roomId};
-		/*]]> */
-		
-		$("#inputnickname").on("click", function(){
-			nickname = $("#nickname").val();
-			$("#nickname").hide();
-			$("#inputnickname").hide();
-			ws = new WebSocket("ws://"+location.host+"<c:url value='/multichat/chat.do/websocket' />");
-		})
-		
+
+	var ws;
+	var nickname;
+	/* <![CDATA[*/
+	var roomId = ${room.roomId};
+	/*]]> */
+	$("#inputnickname").on("click",function() {
+		nickname = $("#nickname").val();
+		$("#nickname").hide();
+		$("#inputnickname").hide();
+		ws = new WebSocket("ws://"+location.host+"<c:url value='/multichat/chat.do/websocket' />");
+		ws.onopen = function() {
+			ws.send(JSON.stringify({roomId : roomId, messageType : 'Enter', user : nickname}));
+		}
+		ws.onmessage = function(result) {
+			msg = result.data;
+			room = document.getElementById("chatroom");
+			room.innerHTML = room.innerHTML + "<BR>" + msg;
+			if (msg.indexOf("퇴장") > 0 || msg.indexOf("입장") > 0) {
+				var xhr = new XMLHttpRequest();
+				xhr.open('get','/emp/multichat/roomsize?roomId=${room.roomId}');
+				xhr.setRequestHeader("content-type","application/x-www-formurlencoded; charset=UTF-8");
+				xhr.setRequestHeader("${_csrf.headerName}","${_csrf.token}");
+				xhr.send();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === xhr.DONE) {
+						if (xhr.status === 200 || xhr.status === 201) {
+							console.log(xhr.responseText);
+							$("#size").text("방 인원 : " + xhr.responseText);
+						}
+					}
+				}
+			}	
+		}
+	});
+
+	$("#send").on("click", function() {
+		var msg = document.getElementById("message").value;
+		ws.send(JSON.stringify({
+			roomId : roomId,
+			messageType : 'Chat',
+			user : nickname,
+			message : msg
+		}));
+		document.getElementById("message").value = "";
+	});
+	
+	$("#exit").on("click",function() {
+		if (ws != null) {
+			ws.send(JSON.stringify({
+				roomId : roomId,
+				messageType : 'Leave',
+				user : nickname
+			}));
+			ws.close();
+			var xhr = new XMLHttpRequest();
+			xhr.open('get','/emp/multichat/roomsize?roomId=${room.roomId}');
+			xhr.setRequestHeader("content-type","application/x-www-form-urlencoded; charset=UTF-8");
+			xhr.setRequestHeader("${_csrf.headerName}","${_csrf.token}");
+			xhr.send();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === xhr.DONE) {
+					if (xhr.status === 200 || xhr.status === 201) {
+						$("#size").text("방 인원 : " + xhr.responseText);
+					}
+				}
+			}
+		}
+		location.href = "/emp/multichat";
+	});
 	</script>
 	
 	

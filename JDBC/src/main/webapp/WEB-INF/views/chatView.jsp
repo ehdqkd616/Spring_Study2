@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ChatView</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 	<h2>안녕하세요 ${pageContext.session.id}님.</h2>
