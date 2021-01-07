@@ -60,9 +60,6 @@ ___
 - **Views**
   - [views](https://github.com/ehdqkd616/Spring_Study2/tree/master/MyMultiBoard/src/main/webapp/WEB-INF/views)
 
-- **SQL**
-  - [SQL_File](https://github.com/ehdqkd616/Spring_Study2/tree/master/MultiBoard_end/DOCUMENTS)
-
 - **설정 파일**
   - [Dependency](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/pom.xml)
   - [servlet-context](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml)
