@@ -28,45 +28,43 @@
 
 #### MultiBoard_end (멀티게시판 연습1)
 - **Java Sources**
-  - [Controller](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/controller)
-  - [DAO](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/dao)
-  - [Service](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/service)
-  - [VO](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/vo)
+  - [Board](https://github.com/ehdqkd616/Spring_Study2/tree/master/MultiBoard_end/src/main/java/com/coderby/myapp/board)
+  - [Member](https://github.com/ehdqkd616/Spring_Study2/tree/master/MultiBoard_end/src/main/java/com/coderby/myapp/member)
+  - [Common](https://github.com/ehdqkd616/Spring_Study2/tree/master/MultiBoard_end/src/main/java/com/coderby/myapp/common)
 
 - **Views**
-  - [views](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/webapp/WEB-INF/views)
+  - [views](https://github.com/ehdqkd616/Spring_Study2/tree/master/MultiBoard_end/src/main/webapp/WEB-INF/views)
 
 - **SQL**
-  - [SQL_File](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/webapp/resources/SQL)
-  - [SQL_Mapper](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/resources/org/zerock/mappers/member)
+  - [SQL_File](https://github.com/ehdqkd616/Spring_Study2/tree/master/MultiBoard_end/DOCUMENTS)
 
 - **설정 파일**
-  - [Dependency](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/pom.xml)
-  - [Mybatis-config](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/src/main/resources/mybatis-config.xml)
-  - [serlvet-context](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml)
-  - [root-context](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/src/main/webapp/WEB-INF/spring/root-context.xml)
-  - [web.xml](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/src/main/webapp/WEB-INF/web.xml)
+  - [Dependency](https://github.com/ehdqkd616/Spring_Study2/blob/master/MultiBoard_end/pom.xml)
+  - [mvc-config](https://github.com/ehdqkd616/Spring_Study2/blob/master/MultiBoard_end/src/main/webapp/WEB-INF/spring/mvc-config.xml)
+  - [application-config](https://github.com/ehdqkd616/Spring_Study2/blob/master/MultiBoard_end/src/main/resources/spring/application-config.xml)
+  - [jdbc.properties](https://github.com/ehdqkd616/Spring_Study2/blob/master/MultiBoard_end/src/main/resources/database/jdbc.properties)
+  - [i18n](https://github.com/ehdqkd616/Spring_Study2/tree/master/MultiBoard_end/src/main/resources/i18n)
+  - [web.xml](https://github.com/ehdqkd616/Spring_Study2/blob/master/MultiBoard_end/src/main/webapp/WEB-INF/web.xml)
 
 
 #### MyMultiBoard (멀티게시판 연습2)
 - **Java Sources**
-  - [Controller](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/controller)
-  - [DAO](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/dao)
-  - [Service](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/service)
-  - [VO](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/vo)
-
+  - [Member](https://github.com/ehdqkd616/Spring_Study2/tree/master/MyMultiBoard/src/main/java/com/coderby/myapp/member)
+  - [Common](https://github.com/ehdqkd616/Spring_Study2/tree/master/MyMultiBoard/src/main/java/com/coderby/myapp/common/interceptor)
+  - [Util](https://github.com/ehdqkd616/Spring_Study2/tree/master/MyMultiBoard/src/main/java/com/coderby/myapp/util)
+  
 - **Views**
-  - [views](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/webapp/WEB-INF/views)
+  - [views](https://github.com/ehdqkd616/Spring_Study2/tree/master/MyMultiBoard/src/main/webapp/WEB-INF/views)
 
 - **SQL**
-  - [SQL_File](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/webapp/resources/SQL)
-  - [SQL_Mapper](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/resources/org/zerock/mappers/member)
+  - [SQL_File](https://github.com/ehdqkd616/Spring_Study2/tree/master/MultiBoard_end/DOCUMENTS)
 
 - **설정 파일**
-  - [Dependency](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/pom.xml)
-  - [Mybatis-config](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/src/main/resources/mybatis-config.xml)
-  - [serlvet-context](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml)
-  - [root-context](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/src/main/webapp/WEB-INF/spring/root-context.xml)
-  - [web.xml](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/src/main/webapp/WEB-INF/web.xml)
-
+  - [Dependency](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/pom.xml)
+  - [servlet-context](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml)
+  - [application-config](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/src/main/resources/application-config.xml)
+  - [security-config](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/src/main/resources/security-config.xml)
+  - [jdbc.properties](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/src/main/resources/db/jdbc.properties)
+  - [i18n](https://github.com/ehdqkd616/Spring_Study2/tree/master/MyMultiBoard/src/main/resources/i18n)
+  - [web.xml](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/src/main/webapp/WEB-INF/web.xml)
 
