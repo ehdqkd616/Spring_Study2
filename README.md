@@ -24,6 +24,7 @@
   - [i18n](https://github.com/ehdqkd616/Spring_Study2/tree/master/JDBC/src/main/resources/i18n)
   - [web.xml](https://github.com/ehdqkd616/Spring_Study2/blob/master/JDBC/src/main/webapp/WEB-INF/web.xml)
 
+___
 <br>
 
 #### MultiBoard_end (멀티게시판 연습1)
@@ -46,6 +47,9 @@
   - [i18n](https://github.com/ehdqkd616/Spring_Study2/tree/master/MultiBoard_end/src/main/resources/i18n)
   - [web.xml](https://github.com/ehdqkd616/Spring_Study2/blob/master/MultiBoard_end/src/main/webapp/WEB-INF/web.xml)
 
+___
+<br>
+
 
 #### MyMultiBoard (멀티게시판 연습2)
 - **Java Sources**
@@ -67,4 +71,7 @@
   - [jdbc.properties](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/src/main/resources/db/jdbc.properties)
   - [i18n](https://github.com/ehdqkd616/Spring_Study2/tree/master/MyMultiBoard/src/main/resources/i18n)
   - [web.xml](https://github.com/ehdqkd616/Spring_Study2/blob/master/MyMultiBoard/src/main/webapp/WEB-INF/web.xml)
+
+___
+<br>
 
