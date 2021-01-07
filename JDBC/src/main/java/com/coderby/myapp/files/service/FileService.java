@@ -1,4 +1,4 @@
-package com.coderby.myapp.file.service;
+package com.coderby.myapp.files.service;
 
 import java.util.HashMap;
 import java.util.List;

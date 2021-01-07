@@ -28,7 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.coderby.myapp.file.service.IFileService;
+import com.coderby.myapp.files.service.IFileService;
 import com.coderby.myapp.files.model.FileVO;
 import com.coderby.myapp.member.model.MemberVO;
 
