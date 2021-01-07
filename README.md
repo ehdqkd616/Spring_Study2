@@ -3,21 +3,19 @@
 
 #### JDBC (프레임워크 연습)
 - **Java Sources**
-  - [Controller](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/controller)
-  - [DAO](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/dao)
-  - [Service](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/service)
-  - [VO](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/vo)
+  - [Board](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/controller)
+  - [Member](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/dao)
+  - [Files](https://github.com/ehdqkd616/Spring_Study2/tree/master/JDBC/src/main/java/com/coderby/myapp/files)
+  - [hr](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/service)
+  - [websocket](https://github.com/ehdqkd616/Spring_Study2/tree/master/JDBC/src/main/java/com/coderby/myapp/websocket)
+  - [common](https://github.com/ehdqkd616/Spring_Study2/tree/master/JDBC/src/main/java/com/coderby/myapp/common)
+  - [util](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/java/org/zerock/vo)
 
 - **Views**
   - [views](https://github.com/ehdqkd616/Spring_Study2/tree/master/JDBC/src/main/webapp/WEB-INF/views)
 
-- **SQL**
-  - [SQL_File](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/webapp/resources/SQL)
-  - [SQL_Mapper](https://github.com/ehdqkd616/Spring_Study1/tree/master/ex00/src/main/resources/org/zerock/mappers/member)
-
 - **설정 파일**
   - [Dependency](https://github.com/ehdqkd616/Spring_Study2/blob/master/JDBC/pom.xml)
-  - [Mybatis-config](https://github.com/ehdqkd616/Spring_Study1/blob/master/ex00/src/main/resources/mybatis-config.xml)
   - [serlvet-context](https://github.com/ehdqkd616/Spring_Study2/blob/master/JDBC/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml)
   - [application-config](https://github.com/ehdqkd616/Spring_Study2/blob/master/JDBC/src/main/resources/application-config.xml)
   - [ws-config](https://github.com/ehdqkd616/Spring_Study2/blob/master/JDBC/src/main/webapp/WEB-INF/spring/appServlet/ws-config.xml)
@@ -26,6 +24,7 @@
   - [i18n](https://github.com/ehdqkd616/Spring_Study2/tree/master/JDBC/src/main/resources/i18n)
   - [web.xml](https://github.com/ehdqkd616/Spring_Study2/blob/master/JDBC/src/main/webapp/WEB-INF/web.xml)
 
+<br>
 
 #### MultiBoard_end (멀티게시판 연습1)
 - **Java Sources**
