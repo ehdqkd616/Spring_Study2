@@ -22,7 +22,7 @@
 					<tr>
 						<td>${room.roomId}</td>
 						<td>${room.roomName}</td>
-						<td><a href="/emp/multichat/room/${room.roomId}"><button id="b${room.roomId}">입장</button></a></td>
+						<td><a href="/emp/multichat/room/${room.roomId}"><button id="${room.roomId}">입장</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

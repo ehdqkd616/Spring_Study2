@@ -1,6 +1,5 @@
 package com.coderby.myapp.websocket.controller;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +46,7 @@ public class ChatController {
 		return chatRepository.selectRoom(roomId).getSize();
 	}
 	
-	@GetMapping("/new")
+	@RequestMapping("/new")
 	public String createRoom() {
 		return "multichat/new";
 	}
